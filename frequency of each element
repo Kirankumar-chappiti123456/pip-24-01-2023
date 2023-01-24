@@ -1,0 +1,45 @@
+#include<stdio.h>
+int freqofeach(int n, int a[])
+{
+   int i=0,j=0,c=0;
+   int b[n];
+   int visited=-1;
+   for(i=0;i<n;i++)
+   {
+       c=1;
+       for(j=i+1;j<n;j++)
+       {
+           if(a[i]==a[j])
+           {
+               c++;
+               b[j]=visited;
+           }
+       }
+       if(b[i]!=visited)
+       {
+           b[i]=c;
+       }
+   }
+   printf("array values:");
+   for(i=0;i<n;i++)
+   {
+       if(b[i]!=visited)
+       {
+       printf("%d    |    %d\n",a[i],b[i]);
+   }
+   }
+}
+int main()
+{
+    int n,i=0;
+    printf("enter the array size:");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter the array elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int (*fptr)(int,int [])=freqofeach;
+    fptr(n,a);
+}
