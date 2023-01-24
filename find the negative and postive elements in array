@@ -1,0 +1,33 @@
+#include<stdio.h>
+int negative(int n,int a[])
+{
+    int i=0,c=0,c1=0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<0)
+        {
+            c++;
+        }
+        else
+        {
+            if(a[i]>=1)
+            {
+                c1++;
+            }
+        }
+    }
+    printf("the negative number:%d\n",c);
+    printf("postive number:%d\n",c1);
+}
+int main()
+{
+    int n,a[20],i=0;
+    printf("enter the array size:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int (*fptr)(int ,int [])=negative;
+    fptr(n,a);
+}
