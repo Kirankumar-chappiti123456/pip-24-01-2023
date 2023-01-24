@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char *ptr[]={"raghu","vijay","hema","sailu"};
+   int l=strlen(*ptr);
+   printf("%s",ptr[0]);
+   printf(" %s",ptr[1]);
+   printf(" %s",ptr[2]);
+   printf(" %s\n",ptr[3]);
+   for(int i=0;i<l;i++)
+   {
+       printf("%s ",ptr[i]);
+   }
+}
