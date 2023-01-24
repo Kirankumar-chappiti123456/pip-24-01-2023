@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char a[]="kiran kumar chappiti";
+    char w[10][10],l[10],s[10];
+    int i=0,j=0,k=0,len=0;
+    for(k=0;a[k]!='\0';k++)
+    {
+        if(a[k]!=' ' && a[k]!='\0')
+        {
+            w[i][j++]=a[k];
+        }
+        else
+        {
+            w[i][j]='\0';
+            i++;
+            j=0;
+        }
+    }
+    len=i+1;
+    strcpy(l,w[0]);
+    strcpy(s,w[0]);
+    for(k=0;k<len;k++)
+    {
+        if(strlen(l)<strlen(w[k]))
+        {
+            strcpy(l,w[k]);
+        }
+        if(strlen(s)>strlen(w[k]))
+        {
+            strcpy(s,w[k]);
+        }
+    }
+    printf("the largest string:%s\n",l);
+    printf("the smallest string:%s\n",s);
+    int k2=strlen(l);
+    int k1=strlen(s);
+    printf("the length of largest string:%d\n",k2);
+    printf("the length of smallest string:%d\n",k1);
+}
