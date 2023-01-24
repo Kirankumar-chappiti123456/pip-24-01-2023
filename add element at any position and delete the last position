@@ -1,0 +1,30 @@
+#include<stdio.h>
+int addatele(int n,int a[])
+{
+    int pos,ele,i=0;
+    printf("enter the pos and elemenet to add:");
+    scanf("%d %d",&pos,&ele);
+    for(i=n-1;i>=pos;i--)
+    {
+        a[i]=a[i-1];
+    }
+    a[pos-1]=ele;
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+    }
+}
+int main()
+{
+    int n;
+    printf("enter the array size:");
+    scanf("%d",&n);
+    int a[n],i=0;
+    printf("enter the array elements:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int (*fptr)(int ,int [])=addatele;
+    fptr(n,a);
+}
