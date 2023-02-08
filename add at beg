@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int a[]={1,2,3,4,5,6,7,8},pos=1,ele=9;
+    int l=sizeof(a)/sizeof(a[0]),i=0;
+    printf("%d\n",l);
+    l++;
+    for(i=l-1;i>=pos;i--)
+    {
+        a[i]=a[i-1];
+    }
+    a[pos-1]=ele;
+    for(i=0;i<l;i++)
+    {
+        printf("%d",a[i]);
+    }
+    
+}
